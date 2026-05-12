@@ -69,7 +69,7 @@ app.get("/session", function (req, res) {
   if (req.session.user) {
     res.send(req.session.user);
   } else {
-    res.status(401).json(null);
+    res.status(200).json(null);
   }
 });
 
@@ -106,8 +106,83 @@ app.put("/movies/:imdbID", requireLogin, function (req, res) {
     // Task 2.3: Fetch the movie data from OmdbAPI, follow the pattern used further down
     // in the GET /search endpoint. Implement conversion of the OmdbAPI response to the
     // movie format used in the frontend. Make sure to handle errors and timeouts properly.
+    const url = `http://www.omdbapi.com/?i=${encodeURIComponent(
+      imdbID
+    )}&apikey=${config.omdbApiKey}`;
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(
+      () => controller.abort(),
+      config.omdbTimeoutMs
+    );
+
+    fetch(url, { signal: controller.signal })
+      .then((apiRes) => {
+        clearTimeout(timeoutId);
+
+        if (!apiRes.ok) {
+          return res.sendStatus(apiRes.status);
+        }
+
+        return apiRes.json();
+      })
+      .then((movie) => {
+        if (!movie || movie.Response === "False") {
+          return res.sendStatus(404);
+        }
+
+        const internalMovie = {
+          imdbID: movie.imdbID,
+          Title: movie.Title,
+          Released:
+            movie.Released === "N/A"
+              ? null
+              : new Date(movie.Released).toISOString().split("T")[0],
+          Runtime: movie.Runtime === "N/A" ? null : parseInt(movie.Runtime),
+          Genres:
+            movie.Genre === "N/A"
+              ? []
+              : movie.Genre.split(",").map((genre) => genre.trim()),
+          Directors:
+            movie.Director === "N/A"
+              ? []
+              : movie.Director.split(",").map((director) => director.trim()),
+          Writers:
+            movie.Writer === "N/A"
+              ? []
+              : movie.Writer.split(",").map((writer) => writer.trim()),
+          Actors:
+            movie.Actors === "N/A"
+              ? []
+              : movie.Actors.split(",").map((actor) => actor.trim()),
+          Plot: movie.Plot === "N/A" ? "" : movie.Plot,
+          Poster: movie.Poster === "N/A" ? "" : movie.Poster,
+          Metascore:
+            movie.Metascore === "N/A" ? null : parseInt(movie.Metascore),
+          imdbRating:
+            movie.imdbRating === "N/A" ? null : parseFloat(movie.imdbRating),
+        };
+
+        movieModel.setUserMovie(username, imdbID, internalMovie);
+        res.sendStatus(201);
+      })
+      .catch((err) => {
+        clearTimeout(timeoutId);
+
+        if (err.name === "AbortError") {
+          console.error("OMDb API request timeout");
+          return res.sendStatus(504);
+        }
+
+        console.error("OMDb API error:", err);
+        res.sendStatus(500);
+      });
   } else {
-    movieModel.setUserMovie(username, imdbID, req.body);
+    if (req.body && Object.keys(req.body).length > 0) {
+      // Edit existing movie (body contains updated data from edit form)
+      movieModel.setUserMovie(username, imdbID, req.body);
+    }
+    // Movie already in collection (add attempt with no body) → just return 200
     res.sendStatus(200);
   }
 });

@@ -154,16 +154,22 @@ function searchMovies(query) {
       }
 
       results.forEach((movie) => {
-        const resultElement = new ElementBuilder("div")
-          .id(movie.imdbID)
-          .append(
-            new ElementBuilder("span").text(`${movie.Title} (${movie.Year})`)
-          )
-          .append(
-            new ButtonBuilder("Add").onclick(() => addMovie(movie.imdbID))
-          );
+        const resultElement = document.createElement("div");
+        resultElement.id = movie.imdbID;
 
-        resultElement.appendTo(resultsDiv);
+        const text = document.createElement("span");
+        text.textContent = `${movie.Title} (${movie.Year}) `;
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = "Add";
+
+        button.addEventListener("click", () => {
+          addMovie(movie.imdbID);
+        });
+
+        resultElement.append(text, button);
+        resultsDiv.append(resultElement);
       });
     })
     .catch((error) => {
