@@ -44,9 +44,9 @@
     <dialog id="loginDialog">
       <form id="loginForm">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" required />
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" required />
         <button type="submit">Login</button>
         <button type="button" id="cancelLogin">Cancel</button>
       </form>
@@ -55,6 +55,17 @@
     <!-- Task 2.1: Add a search dialog markup. Make sure the ids of the elements 
      match the ones used in index.js. Your dialog needs a form and submit and cancel
      buttons. -->
-    
+    <!-- Search Dialog -->
+    <dialog id="searchDialog">
+      <form id="searchForm">
+        <label for="query">Search movie:</label>
+        <input type="text" id="query" name="query" required />
+
+        <button type="submit">Search</button>
+        <button type="button" id="cancelSearch">Cancel</button>
+
+        <div id="searchResults"></div>
+      </form>
+    </dialog>
   </body>
 </html>
