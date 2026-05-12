@@ -173,6 +173,24 @@ window.onload = function () {
       // Task 1.2: Render a user greeting to `#userGreeting`
       // using `firstName`, `lastName`, and the server-provided
       // login timestamp.
+      const loginDate = new Date(
+        currentSession.loginTimestamp || currentSession.loginTime
+      );
+
+      const formattedDate = loginDate.toLocaleDateString("de-DE", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+
+      const formattedTime = loginDate.toLocaleTimeString("de-DE", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
+      const user = currentSession.user || currentSession;
+
+      greetingElement.textContent = `Hi ${user.firstName} ${user.lastName}, du hast dich am ${formattedDate} um ${formattedTime} angemeldet.`;
     } else {
       greetingElement.textContent = messages.loggedOutGreeting;
     }
