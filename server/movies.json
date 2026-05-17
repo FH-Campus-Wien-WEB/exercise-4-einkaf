@@ -79,6 +79,135 @@
       "Poster": "https://m.media-amazon.com/images/M/MV5BY2RiOTM0ZDgtNDRlMi00MDMzLWI1NDYtY2NjZDM4YTkwNWVlXkEyXkFqcGc@._V1_SX300.jpg",
       "Metascore": 67,
       "imdbRating": 6.9
+    },
+    "tt2305326": {
+      "imdbID": "tt2305326",
+      "Title": "Braking for Whales",
+      "Released": "2020-04-23",
+      "Runtime": 103,
+      "Genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "Directors": [
+        "Sean McEwen"
+      ],
+      "Writers": [
+        "Sean McEwen",
+        "Tammin Sursok"
+      ],
+      "Actors": [
+        "Tom Felton",
+        "Tammin Sursok",
+        "Wendi McLendon-Covey"
+      ],
+      "Plot": "A dysfunctional brother and sister are forced to come to terms with each other and themselves over their recently deceased mother's final wish.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYjhmYWY1OTQtZWM0MC00Y2JjLThhMjctYjFhMTE5MzkwMDRhXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": null,
+      "imdbRating": 5
+    },
+    "tt0124718": {
+      "imdbID": "tt0124718",
+      "Title": "He Got Game",
+      "Released": "1998-04-30",
+      "Runtime": 136,
+      "Genres": [
+        "Drama",
+        "Sport"
+      ],
+      "Directors": [
+        "Spike Lee"
+      ],
+      "Writers": [
+        "Spike Lee"
+      ],
+      "Actors": [
+        "Denzel Washington",
+        "Milla Jovovich",
+        "Ray Allen"
+      ],
+      "Plot": "A basketball player's father must try to convince him to go to a college so he can get a shorter sentence.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjA0MDVmOTItMWQzMS00ODFlLTkxNjMtMjc4MWU2MjZiNTRjXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 64,
+      "imdbRating": 6.9
+    },
+    "tt10919420": {
+      "imdbID": "tt10919420",
+      "Title": "Squid Game",
+      "Released": "2021-09-16",
+      "Runtime": null,
+      "Genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "Directors": [],
+      "Writers": [
+        "Hwang Dong-hyuk"
+      ],
+      "Actors": [
+        "Lee Jung-jae",
+        "Wi Ha-joon",
+        "Jeon Young-soo"
+      ],
+      "Plot": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. A tempting prize awaits, but with deadly high stakes.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYTU3ZDVhNmMtMDVlNC00MDc0LTgwNDMtYWE5MTI2ZGI4YWIwXkEyXkFqcGc@._V1_QL75_UX380_CR0,0,380,562_.jpg",
+      "Metascore": null,
+      "imdbRating": 7.9
+    },
+    "tt0119174": {
+      "imdbID": "tt0119174",
+      "Title": "The Game",
+      "Released": "1997-09-11",
+      "Runtime": 129,
+      "Genres": [
+        "Drama",
+        "Mystery",
+        "Thriller"
+      ],
+      "Directors": [
+        "David Fincher"
+      ],
+      "Writers": [
+        "John Brancato",
+        "Michael Ferris"
+      ],
+      "Actors": [
+        "Michael Douglas",
+        "Deborah Kara Unger",
+        "Sean Penn"
+      ],
+      "Plot": "A mysterious game invades a man's ordered existence.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNGUzNzQwNmMtNzI3Mi00ZDIwLWJlM2ItMTA5N2Q2ZDMxMjJiXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 63,
+      "imdbRating": 7.7
+    },
+    "tt1731141": {
+      "imdbID": "tt1731141",
+      "Title": "Ender's Game",
+      "Released": "2013-10-31",
+      "Runtime": 114,
+      "Genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "Directors": [
+        "Gavin Hood"
+      ],
+      "Writers": [
+        "Gavin Hood",
+        "Orson Scott Card"
+      ],
+      "Actors": [
+        "Harrison Ford",
+        "Asa Butterfield",
+        "Hailee Steinfeld"
+      ],
+      "Plot": "Young Ender Wiggin is recruited by the International Military to lead the fight against the Formics, an insectoid alien race who had previously tried to invade Earth and had inflicted heavy losses on humankind.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMjAzMzI5OTgzMl5BMl5BanBnXkFtZTgwMTU5MTAwMDE@._V1_SX300.jpg",
+      "Metascore": 51,
+      "imdbRating": 6.6
     }
   },
   "jane": {
